@@ -14,7 +14,7 @@ async def on_ready():
 async def on_message(message):
 
     # Checking if its a dm channel
-    if isinstance(message.channel, discord.DMChannel):
+    if isinstance(message.channel, discord.DMChannel) and message.author != bot.user:
         # Getting the channel
         channel = bot.get_channel(int(CHANNEL_ID))
         await channel.send(f"{{{message.author}}} sent:\n```{message.content}```")
