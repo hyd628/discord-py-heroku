@@ -18,6 +18,8 @@ async def on_message(message):
         # Getting the channel
         channel = bot.get_channel(int(CHANNEL_ID))
         await channel.send(f"{{{message.author}}} sent:\n```{message.content}```")
+
+        await message.channel.send('Thanks! I will process your request.')
         
     # Processing the message so commands will work
     await bot.process_commands(message)
